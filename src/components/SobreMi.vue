@@ -19,5 +19,5 @@ import perfil from '@/assets/imagenes/imagenserena.jpg'
 </template>
 
 <style scoped>
-/* estilos locales opcionales; las clases principales están en style.css */
+
 </style>

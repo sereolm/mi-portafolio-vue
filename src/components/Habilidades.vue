@@ -27,5 +27,5 @@ const habilidades = ref([
 </template>
 
 <style scoped>
-/* Estilos locales (puedes moverlos a tu CSS global si prefieres) */
+
 </style>
