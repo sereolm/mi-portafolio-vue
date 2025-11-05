@@ -1,47 +1,56 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import NavBar from './components/NavBar.vue'
+import Estudios from './components/Estudios.vue'
+import Experiencia from './components/Experiencia.vue'
+import Habilidades from './components/Habilidades.vue'
+import Proyectos from './components/Proyectos.vue'
+import SiteFooter from './components/SiteFooter.vue'
+import SobreMi from './components/SobreMi.vue'
+
+// Referencia explícita a imports para evitar warnings del linter sobre
+// variables no usadas cuando el template las consume (script setup).
+const __components = [NavBar, SobreMi, Estudios, Experiencia, Habilidades, Proyectos, SiteFooter]
+void __components
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div id="app">
+    <NavBar />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <main>
+      <SobreMi />
 
-  <main>
-    <TheWelcome />
-  </main>
+      <!-- Secciones principales (componentes) -->
+      <Estudios />
+      <Experiencia />
+      <Habilidades />
+      <Proyectos />
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p class="contact-subtle">Si preferís, también podés escribirme directamente a <a href="mailto:serenadelvalle25@gmail.com">serenadelvalle25@gmail.com</a></p>
+        <div class="formulario-container">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeqLha4ZW0h_NfPmAdfOPsqjZIJoaBniDKyJOw1AOdB4GrkPg/viewform?embedded=true"
+            width="100%"
+            height="420"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            loading="lazy"
+          >
+            Cargando…
+          </iframe>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<style>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
+
+
